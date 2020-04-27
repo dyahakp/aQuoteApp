@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Favorite.FavQuoteFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/rounded2"
+            android:orientation="vertical"
+            android:outlineAmbientShadowColor="#ffffff"
+            android:outlineSpotShadowColor="@color/colorPrimaryDark">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:padding="5dp"
+                android:text="Your Favorite Quote"
+                android:textAlignment="center"
+                android:textColor="#290961"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/header"
+            tools:listitem="@layout/item_list_search_quote"></androidx.recyclerview.widget.RecyclerView>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Quotes.QuotesFragment">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/rounded2"
+        android:orientation="vertical"
+        android:outlineAmbientShadowColor="#ffffff"
+        android:outlineSpotShadowColor="@color/colorPrimaryDark">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:padding="5dp"
+            android:text="Quote Of The Day"
+            android:textAlignment="center"
+            android:textColor="#290961"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBarQotd"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardQotd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:visibility="gone"
+            app:cardElevation="5dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="380dp">
+
+                <RelativeLayout
+                    android:id="@+id/container"
+                    android:layout_width="match_parent"
+                    android:layout_height="330dp"
+                    android:elevation="4dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="if you'll never try you'll never know"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/_15ssp" />
+
+                    <TextView
+                        android:id="@+id/author"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/body"
+                        android:gravity="center"
+                        android:paddingTop="10dp"
+                        android:text="Dyah anggraini"
+                        android:textColor="#ff785b"
+                        android:textSize="@dimen/_13ssp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/container">
+
+                    <ImageButton
+                        android:id="@+id/btnLike"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#ffffff"
+                        android:src="@drawable/love" />
+
+                    <ImageButton
+                        android:id="@+id/btnCopy"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toRightOf="@id/btnLike"
+                        android:background="#ffffff"
+                        android:src="@drawable/copy" />
+
+                    <ImageButton
+                        android:id="@+id/btnShare"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toRightOf="@id/btnCopy"
+                        android:background="#ffffff"
+                        android:src="@drawable/share" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/btnRefresh"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_below="@id/cardQotd"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_marginBottom="@dimen/_40sdp"
+            android:src="@drawable/arrow" />
+
+    </RelativeLayout>
+
+</LinearLayout>

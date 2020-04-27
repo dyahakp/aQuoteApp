@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Search.SearchQuotesFragment">
+
+    <co.ceryle.radiorealbutton.RadioRealButtonGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rrbg_animateDrawables_enter="overshoot"
+        app:rrbg_animateTexts_enter="overshoot"
+        app:rrbg_backgroundColor="@color/colorAccent"
+        app:rrbg_dividerColor="@android:color/white"
+        app:rrbg_dividerSize="1dp"
+        app:rrbg_selectorColor="#1F2855"
+        app:rrbg_selectorSize="6dp">
+
+        <co.ceryle.radiorealbutton.RadioRealButton
+            android:id="@+id/radioWord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:rrb_ripple="true"
+            app:rrb_rippleColor="@android:color/white"
+            app:rrb_text="Word"
+            app:rrb_textColor="@android:color/white" />
+
+        <co.ceryle.radiorealbutton.RadioRealButton
+            android:id="@+id/radioAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:rrb_ripple="true"
+            app:rrb_rippleColor="@android:color/white"
+            app:rrb_text="Author"
+            app:rrb_textColor="@android:color/white" />
+    </co.ceryle.radiorealbutton.RadioRealButtonGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_42sdp"
+            android:layout_weight="1"
+            android:hint="@android:string/search_go"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="@dimen/_84sdp"
+            android:layout_height="@dimen/_33sdp"
+            android:background="@drawable/rounded3"
+            android:drawableLeft="@drawable/search"
+            android:forceHasOverlappingRendering="true"
+            android:padding="@dimen/_10sdp"
+            android:text="Search"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/_8ssp" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBarSearch"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fragment_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:listitem="@layout/item_list_search_quote"></androidx.recyclerview.widget.RecyclerView>
+</LinearLayout>
