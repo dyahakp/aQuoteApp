@@ -1,6 +1,6 @@
 package com.example.projectquoteapp.Search;
 
-import com.example.projectquoteapp.Quotes.QuotesModel;
+import com.example.projectquoteapp.Quotes.QuotesResult;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -15,7 +15,7 @@ public class SearchQuotesResponse {
     private Boolean lastPage;
     @SerializedName("quotes")
     @Expose
-    private ArrayList<QuotesModel> quotes = null;
+    private ArrayList<QuotesResult> quotes = null;
 
     public Integer getPage() {
         return page;
@@ -33,11 +33,11 @@ public class SearchQuotesResponse {
         this.lastPage = lastPage;
     }
 
-    public ArrayList<QuotesModel> getQuotes() {
+    public ArrayList<QuotesResult> getQuotes() {
         return quotes;
     }
 
-    public void setQuotes(ArrayList<QuotesModel> quotes) {
+    public void setQuotes(ArrayList<QuotesResult> quotes) {
         this.quotes = quotes;
     }
 }

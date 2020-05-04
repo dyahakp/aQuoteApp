@@ -122,7 +122,6 @@ public class QuotesFragment extends Fragment {
             }
         });
     }
-
     private void insertData(Application application, FavQuote quote) {
         quoteViewModel.insertFavQuote(application, quote);
     }

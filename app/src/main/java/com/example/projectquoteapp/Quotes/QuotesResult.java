@@ -2,10 +2,9 @@ package com.example.projectquoteapp.Quotes;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 import java.util.List;
 
-public class QuotesModel {
+public class QuotesResult {
     @SerializedName("id")
     @Expose
     private Integer id;
@@ -40,7 +39,7 @@ public class QuotesModel {
     @Expose
     private String body;
 
-    public QuotesModel(Integer id, String body, String author) {
+    public QuotesResult(Integer id, String body, String author) {
         this.id = id;
         this.author = author;
         this.body = body;

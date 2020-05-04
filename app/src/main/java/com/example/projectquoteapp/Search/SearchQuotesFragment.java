@@ -25,7 +25,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.projectquoteapp.Adapter.SearchQuotesAdapter;
 import com.example.projectquoteapp.Favorite.FavQuote;
 import com.example.projectquoteapp.Favorite.FavQuoteDatabase;
-import com.example.projectquoteapp.Quotes.QuotesModel;
+import com.example.projectquoteapp.Quotes.QuotesResult;
 import com.example.projectquoteapp.R;
 import com.example.projectquoteapp.ViewModel.SearchViewModel;
 
@@ -127,12 +127,12 @@ public class SearchQuotesFragment extends Fragment {
     private void handleClick() {
         searchQuotesAdapter.setOnItemClickListener(new SearchQuotesAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(View view, QuotesModel item, int position) {
+            public void onItemClick(View view, QuotesResult item, int position) {
 
             }
 
             @Override
-            public void onFavClick(View view, QuotesModel item, int position) {
+            public void onFavClick(View view, QuotesResult item, int position) {
                 insertData(getActivity().getApplication(), new FavQuote(
                         item.getId(),
                         item.getBody(),
@@ -142,7 +142,7 @@ public class SearchQuotesFragment extends Fragment {
             }
 
             @Override
-            public void onCopyClick(View view, QuotesModel item, int position) {
+            public void onCopyClick(View view, QuotesResult item, int position) {
                 String textQuote = item.getBody() + " ~" + item.getAuthor();
                 ClipboardManager clipboard = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clip = ClipData.newPlainText("quote", textQuote);
@@ -151,7 +151,7 @@ public class SearchQuotesFragment extends Fragment {
             }
 
             @Override
-            public void onShareClick(View view, QuotesModel item, int position) {
+            public void onShareClick(View view, QuotesResult item, int position) {
                 String textQuote = item.getBody() + " ~" + item.getAuthor();
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
@@ -161,7 +161,6 @@ public class SearchQuotesFragment extends Fragment {
             }
         });
     }
-
     private void insertData(Application application, FavQuote quote) {
         searchViewModel.insertFavQuote(application, quote);
     }

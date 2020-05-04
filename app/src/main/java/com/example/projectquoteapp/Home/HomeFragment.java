@@ -5,12 +5,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
-
 import com.example.projectquoteapp.R;
-
 import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
@@ -19,16 +16,13 @@ public class HomeFragment extends Fragment {
     ArrayList<HomeModel> models;
     Integer[] colors = null;
     ArgbEvaluator argbEvaluator = new ArgbEvaluator();
-
     public HomeFragment() {
         // Required empty public constructor
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
         models = new ArrayList<HomeModel>();
         models.add(new HomeModel(R.drawable.c2, "#GETCAPTIONHERE", "Caption for your social media"));
@@ -53,14 +47,12 @@ public class HomeFragment extends Fragment {
                 getResources().getColor(R.color.colorAccent)
         };
         colors = colors_temp;
-
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
                 if (position < (homeAdapter.getCount() - 1) && position < (colors.length - 1)) {
                     viewPager.setBackgroundColor(
-
                             (Integer) argbEvaluator.evaluate(
                                     positionOffset,
                                     colors[position],
@@ -71,19 +63,13 @@ public class HomeFragment extends Fragment {
                     viewPager.setBackgroundColor(colors[colors.length - 1]);
                 }
             }
-
             @Override
             public void onPageSelected(int position) {
-
             }
-
             @Override
             public void onPageScrollStateChanged(int state) {
-
             }
-
         });
-
         return v;
     }
 

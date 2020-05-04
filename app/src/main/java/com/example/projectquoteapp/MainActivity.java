@@ -3,13 +3,10 @@ package com.example.projectquoteapp;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-
-import com.example.projectquoteapp.About.AboutUsFragment;
 import com.example.projectquoteapp.Favorite.FavQuoteFragment;
 import com.example.projectquoteapp.Home.HomeFragment;
 import com.example.projectquoteapp.Quotes.QuotesFragment;
@@ -56,9 +53,6 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.favorite:
                         fragment = new FavQuoteFragment();
                         break;
-                    case R.id.information:
-                        fragment = new AboutUsFragment();
-                        break;
                 }
                 if (fragment != null) {
                     fragmentManager = getSupportFragmentManager();
@@ -80,14 +74,12 @@ public class MainActivity extends AppCompatActivity {
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                //if user pressed "yes", then he is allowed to exit from application
                 finish();
             }
         });
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                //if user select "No", just cancel this dialog and continue with app
                 dialog.cancel();
             }
         });

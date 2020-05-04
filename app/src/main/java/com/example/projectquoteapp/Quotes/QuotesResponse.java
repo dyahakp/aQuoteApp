@@ -9,7 +9,7 @@ public class QuotesResponse {
     private String qotdDate;
     @SerializedName("quote")
     @Expose
-    private QuotesModel quote;
+    private QuotesResult quote;
 
     public String getQotdDate() {
         return qotdDate;
@@ -19,11 +19,11 @@ public class QuotesResponse {
         this.qotdDate = qotdDate;
     }
 
-    public QuotesModel getQuote() {
+    public QuotesResult getQuote() {
         return quote;
     }
 
-    public void setQuote(QuotesModel quote) {
+    public void setQuote(QuotesResult quote) {
         this.quote = quote;
     }
 }

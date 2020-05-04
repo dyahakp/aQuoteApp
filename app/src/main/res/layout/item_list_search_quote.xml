@@ -9,6 +9,7 @@
     app:layout_constraintCircleRadius="3dp">
 
     <androidx.cardview.widget.CardView
+        app:cardCornerRadius="@dimen/_9sdp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"

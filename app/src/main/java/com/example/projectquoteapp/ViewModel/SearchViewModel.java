@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModel;
 import com.example.projectquoteapp.Favorite.FavQuote;
 import com.example.projectquoteapp.Favorite.FavQuoteRepository;
 import com.example.projectquoteapp.Search.SearchQuotesResponse;
-import com.example.projectquoteapp.Service.ApiInterface;
+import com.example.projectquoteapp.Service.ApiService;
 import com.example.projectquoteapp.Service.ApiMain;
 
 import retrofit2.Call;
@@ -20,12 +20,12 @@ import retrofit2.Response;
 public class SearchViewModel extends ViewModel {
     private static final String TAG = SearchViewModel.class.getSimpleName();
     private MutableLiveData<SearchQuotesResponse> searchResponseLiveData = new MutableLiveData<>();
-    private ApiInterface apiInterface;
+    private ApiService apiService;
     private FavQuoteRepository favQuoteRepository;
 
     public void setSearchResponseLiveData() {
-        apiInterface = ApiMain.getClient().create(ApiInterface.class);
-        apiInterface.getQuotes(ApiMain.API_KEY).enqueue(new Callback<SearchQuotesResponse>() {
+        apiService = ApiMain.getClient().create(ApiService.class);
+        apiService.getQuotes(ApiMain.API_KEY).enqueue(new Callback<SearchQuotesResponse>() {
             @Override
             public void onResponse(Call<SearchQuotesResponse> call, Response<SearchQuotesResponse> response) {
                 if (response.code() == 200) {
@@ -44,8 +44,8 @@ public class SearchViewModel extends ViewModel {
     }
 
     public void setSearchResponseLiveDataFilter(String query, String type) {
-        apiInterface = ApiMain.getClient().create(ApiInterface.class);
-        apiInterface.getQuotesFilter(ApiMain.API_KEY, query, type).enqueue(new Callback<SearchQuotesResponse>() {
+        apiService = ApiMain.getClient().create(ApiService.class);
+        apiService.getQuotesFilter(ApiMain.API_KEY, query, type).enqueue(new Callback<SearchQuotesResponse>() {
             @Override
             public void onResponse(Call<SearchQuotesResponse> call, Response<SearchQuotesResponse> response) {
                 if (response.code() == 200) {

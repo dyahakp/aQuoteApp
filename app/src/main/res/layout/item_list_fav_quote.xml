@@ -9,6 +9,7 @@
     app:layout_constraintCircleRadius="3dp">
 
     <androidx.cardview.widget.CardView
+        app:cardCornerRadius="@dimen/_8sdp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -33,7 +34,7 @@
                     android:gravity="center"
                     android:text="if you'll never try you'll never know"
                     android:textAlignment="center"
-                    android:textSize="@dimen/_15ssp" />
+                    android:textSize="@dimen/_14ssp" />
 
                 <TextView
                     android:id="@+id/author"
@@ -44,7 +45,7 @@
                     android:paddingTop="10dp"
                     android:text="Dyah anggraini"
                     android:textColor="#ff785b"
-                    android:textSize="@dimen/_13ssp" />
+                    android:textSize="@dimen/_12ssp" />
             </RelativeLayout>
 
             <RelativeLayout

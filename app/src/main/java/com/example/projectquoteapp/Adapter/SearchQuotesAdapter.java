@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.projectquoteapp.Quotes.QuotesModel;
+import com.example.projectquoteapp.Quotes.QuotesResult;
 import com.example.projectquoteapp.R;
 
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class SearchQuotesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private Context context;
-    private ArrayList<QuotesModel> quotesModelArrayList = new ArrayList<>();
+    private ArrayList<QuotesResult> quotesResultArrayList = new ArrayList<>();
     private OnItemClickListener mOnItemClickListener;
 
 
@@ -30,9 +30,9 @@ public class SearchQuotesAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         this.mOnItemClickListener = mItemClickListener;
     }
 
-    public void setData(ArrayList<QuotesModel> items) {
-        quotesModelArrayList.clear();
-        quotesModelArrayList.addAll(items);
+    public void setData(ArrayList<QuotesResult> items) {
+        quotesResultArrayList.clear();
+        quotesResultArrayList.addAll(items);
         notifyDataSetChanged();
     }
 
@@ -48,14 +48,14 @@ public class SearchQuotesAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         if (holder instanceof ViewHolder) {
             final ViewHolder view = (ViewHolder) holder;
-            QuotesModel quotes = quotesModelArrayList.get(position);
+            QuotesResult quotes = quotesResultArrayList.get(position);
             view.ivBody.setText(quotes.getBody());
             view.ivAuthor.setText(quotes.getAuthor());
             view.linearLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if (mOnItemClickListener != null) {
-                        mOnItemClickListener.onItemClick(v, quotesModelArrayList.get(position), position);
+                        mOnItemClickListener.onItemClick(v, quotesResultArrayList.get(position), position);
                     }
                 }
             });
@@ -63,7 +63,7 @@ public class SearchQuotesAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 @Override
                 public void onClick(View v) {
                     if (mOnItemClickListener != null) {
-                        mOnItemClickListener.onCopyClick(v, quotesModelArrayList.get(position), position);
+                        mOnItemClickListener.onCopyClick(v, quotesResultArrayList.get(position), position);
                     }
                 }
             });
@@ -71,7 +71,7 @@ public class SearchQuotesAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 @Override
                 public void onClick(View v) {
                     if (mOnItemClickListener != null) {
-                        mOnItemClickListener.onFavClick(v, quotesModelArrayList.get(position), position);
+                        mOnItemClickListener.onFavClick(v, quotesResultArrayList.get(position), position);
                     }
                 }
             });
@@ -79,7 +79,7 @@ public class SearchQuotesAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 @Override
                 public void onClick(View v) {
                     if (mOnItemClickListener != null) {
-                        mOnItemClickListener.onShareClick(v, quotesModelArrayList.get(position), position);
+                        mOnItemClickListener.onShareClick(v, quotesResultArrayList.get(position), position);
                     }
                 }
             });
@@ -88,17 +88,17 @@ public class SearchQuotesAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     @Override
     public int getItemCount() {
-        return quotesModelArrayList.size();
+        return quotesResultArrayList.size();
     }
 
     public interface OnItemClickListener {
-        void onItemClick(View view, QuotesModel item, int position);
+        void onItemClick(View view, QuotesResult item, int position);
 
-        void onFavClick(View view, QuotesModel item, int position);
+        void onFavClick(View view, QuotesResult item, int position);
 
-        void onCopyClick(View view, QuotesModel item, int position);
+        void onCopyClick(View view, QuotesResult item, int position);
 
-        void onShareClick(View view, QuotesModel item, int position);
+        void onShareClick(View view, QuotesResult item, int position);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

@@ -6,12 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
-
 import com.example.projectquoteapp.R;
-
 import java.util.ArrayList;
 
 public class HomeAdapter extends PagerAdapter {
@@ -24,7 +21,6 @@ public class HomeAdapter extends PagerAdapter {
         this.models = models;
         this.context = context;
     }
-
     @Override
     public int getCount() {
         return models.size();
@@ -34,7 +30,6 @@ public class HomeAdapter extends PagerAdapter {
     public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
         return view.equals(object);
     }
-
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, final int position) {
@@ -55,7 +50,6 @@ public class HomeAdapter extends PagerAdapter {
         container.addView(view, 0);
         return view;
     }
-
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
         container.removeView((View) object);

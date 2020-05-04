@@ -30,12 +30,6 @@
         app:cnb_backgroundColor="#ff785b"
         app:cnb_iconColor="#fff"
         app:cnb_textColor="#fff" />
-    <item
-        android:id="@+id/information"
-        android:icon="@drawable/information"
-        android:title="About Us"
-        app:cnb_backgroundColor="#ff785b"
-        app:cnb_iconColor="#fff"
-        app:cnb_textColor="#fff" />
+
 
 </menu>

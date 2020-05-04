@@ -15,7 +15,11 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/_410sdp"
-            android:background="#B5D64324">
+            android:background="@color/colorAccent"
+            android:elevation="@dimen/_10sdp"
+            android:outlineSpotShadowColor="@color/colorPrimaryDark"
+            android:outlineAmbientShadowColor="@color/colorPrimary"
+            >
 
             <ImageView
                 android:id="@+id/image"
@@ -52,6 +56,4 @@
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
-
-
 </LinearLayout>
